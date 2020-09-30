@@ -1,0 +1,92 @@
+<div id="calculator">
+	<div>
+		<div id="value">
+			<input type="text" nz-input [(ngModel)]="value" (keydown)="keydown($event)" appCalculator>
+		</div>
+		<div id="result">
+			<input type="text" nz-input [(ngModel)]="result" [readOnly]="true" [placeholder]="'Result'">
+		</div>
+	</div>
+	
+	<div id="buttonPanel">
+		<div id="numbers">
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="clearInput()">C</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="backspace()"><-</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatAction('^')">x<sup>n</sup></button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('7')">7</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('8')">8</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('9')">9</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('4')">4</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('5')">5</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('6')">6</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('1')">1</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('2')">2</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('3')">3</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('0')">0</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatNumber('00')">00</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatDot('.')">.</button>
+			</div>
+		</div>
+		<div id="actions">
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatOpenBrace()">(<sup *ngIf="braceCount > 0">{{braceCount}}</sup></button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatCloseBrace()">)</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatAction('/')">/</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="createInfoModal()">&#8730;</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatAction('*')">*</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="createInfoModal()">&#960;</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatAction('-')">-</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="createInfoModal()">10<sup>x</sup></button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="concatAction('+')">+</button>
+			</div>
+			<div>
+				<button nz-button nzType="primary" nzSize="large" (click)="getResult()">=</button>
+			</div>
+		</div>
+	</div>
+</div>

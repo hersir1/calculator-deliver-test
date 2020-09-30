@@ -1,0 +1,51 @@
+@mixin buttonsPanel {
+	display: grid;
+	grid-gap: 1rem;
+}
+
+#calculator {
+	width: 450px;
+	padding: 1rem;
+	background-color: #a79086;
+	
+	#result {
+		margin-top: 0.5rem;
+	}
+	
+	#buttonPanel {
+		margin-top: 1rem;
+		display: flex;
+		
+		#numbers {
+			@include buttonsPanel;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		
+		#actions {
+			margin-left: 1rem;
+			
+			@include buttonsPanel;
+			grid-template-columns: 1fr 1fr;
+			
+		}
+	}
+}
+
+input {
+	border-radius: 10px;
+	height: 35px;
+	caret-color: transparent;
+}
+
+button {
+	width: 70px;
+	
+	border-radius: 10px;
+	box-shadow: 0 5px 5px #6d031c;
+	background: #6d031c;
+	border-color: #6d031c;
+	
+	font-family: Encode Sans, sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+}
